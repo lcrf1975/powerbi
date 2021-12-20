@@ -6,7 +6,7 @@ shared RNA.Contents = (optional message as text) =>
     let
         _message = if (message <> null) then message else "(no message)",
 
-        Body_Login = "{""username"":""lucianofontes@company.com"",""password"":""put your password here""}",
+        Body_Login = "{""username"":""user@company.com"",""password"":""put your password here""}",
 
         Data_Login = Web.Contents ("https://api.aws.company.com/integration/v1/login", [Content = Text.ToBinary (Body_Login), Headers = [#"Content-Type"="application/json"]]),
         DataRecord_Login = Json.Document (Data_Login),
